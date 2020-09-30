@@ -1,0 +1,19 @@
+$navColor: #b3b3b3;
+.siderbarOption {
+  display: flex;
+  align-items: center;
+  color: $navColor;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: white;
+  }
+  .siderbarOptionIcon {
+    padding: 0px 10px 0px 10px;
+  }
+  p {
+    margin: 10px 0px 0px 20px;
+    font-size: 14px;
+  }
+}

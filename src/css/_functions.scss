@@ -1,0 +1,25 @@
+@mixin flexObjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin simpleFlex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin playIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $greenPlay;
+  display: flex;
+  overflow: hidden;
+  margin-left: auto;
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
+  svg {
+    margin: auto;
+  }
+}

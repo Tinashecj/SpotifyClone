@@ -1,0 +1,32 @@
+.Appheader {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: 50%;
+  .headerRight {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    h4 {
+      margin-left: 10px;
+    }
+  }
+  .headerLeft {
+    flex: 0.5;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    color: gray;
+    align-items: center;
+    input {
+      border: none;
+      width: 100%;
+    }
+    svg {
+      fill: #b3b3b3;
+    }
+  }
+}

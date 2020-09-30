@@ -1,0 +1,26 @@
+.login {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.login a {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 500px;
+  background-color: #1db954;
+  color: white;
+  transition: all 33ms cubic-bezier(0.3, 0, 0, 1);
+  padding: 8px 34px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.login a:hover {
+  font-size: 14px;
+}

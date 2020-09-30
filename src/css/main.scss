@@ -1,0 +1,424 @@
+$darkestBlack: #040404;
+$ligterBlack: #131313;
+$boxdark: #282828;
+$navColor: #b3b3b3;
+$AppSpace: calc(100vh - 90px);
+$musicContSpace: calc(100vh - $AppSpace);
+$bodyNav: #090909;
+$greenPlay: #1db954;
+$opacityNav: rgba(9, 9, 9, 0.78);
+@import "./functions";
+
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  // box-sizing: border-box;
+}
+
+.App {
+  height: $AppSpace;
+  background: $ligterBlack;
+  display: flex;
+}
+
+.header {
+  width: 273px;
+  height: 100%;
+  background: $darkestBlack;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: 12px;
+  color: white;
+}
+
+.header > ul > a > li {
+  color: $navColor;
+  text-decoration: none;
+  list-style: none;
+  &:hover {
+    color: white;
+  }
+  &.active {
+    background: $boxdark;
+    color: white;
+  }
+  svg {
+    fill: currentColor;
+    margin-right: 13px;
+    &:hover {
+      fill: white;
+    }
+  }
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.97rem;
+  @include simpleFlex();
+}
+
+.header > ul {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 4px;
+  padding-top: 0rem;
+  list-style-type: none;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.outerWrap {
+  height: 100vh;
+  min-height: 100%;
+  background: $boxdark;
+}
+
+.outerMusic {
+  height: 90px;
+  background: linear-gradient(120deg, #3e32a8, #e310c7);
+  .regPreview {
+    position: fixed;
+    left: 2.2rem;
+    bottom: 3.3rem;
+    font-size: 13.4px;
+    font-weight: 300;
+  }
+  .regDescription {
+    position: fixed;
+    left: 2.2rem;
+    bottom: 1.5rem;
+    font-weight: 700;
+  }
+  .login {
+    a {
+      transition: all 0.3s ease-in-out;
+      position: fixed;
+      bottom: 1.7rem;
+      right: 3rem;
+
+      &:hover {
+        right: 2.5rem;
+      }
+    }
+  }
+}
+
+.logo {
+  color: white;
+  padding: 1.5rem 1.5rem;
+  svg {
+    max-width: 130px;
+  }
+}
+
+.cookies {
+  font-size: 0.7rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $navColor;
+  text-align: left;
+  margin-top: auto;
+  padding: 1.1rem 1.55rem;
+  span {
+    display: block;
+    padding-bottom: 0.4rem;
+  }
+}
+
+.topNavBar {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: $opacityNav;
+  color: white;
+  @include simpleFlex();
+  padding: 0rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  *.MuiSvgIcon-root {
+    margin-right: 20px;
+    fill: $navColor;
+  }
+  .login {
+    a {
+      transition: all 0.3s ease-in-out;
+      position: fixed;
+      top: 0.7rem;
+      right: 3rem;
+      &:hover {
+        right: 2.8rem;
+      }
+    }
+  }
+}
+
+.body {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  padding-top: 3.8rem;
+  //   padding: 0.5rem 2rem;
+}
+::-webkit-scrollbar {
+  width: 13px;
+  height: 32.0029%;
+  transform: translate(0px, 493.793px);
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px $darkestBlack;
+  border-radius: 0px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 100%, 0.3);
+  border-radius: 0px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $navColor;
+}
+
+.playIcon {
+  display: none;
+}
+
+.boxes {
+  padding-left: 0.45rem;
+  .otherBoxes {
+    display: flex;
+    justify-content: right;
+  }
+  .box {
+    margin-right: 15px;
+    position: relative;
+    background: $boxdark;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
+    max-width: 150px;
+    height: 230px;
+    max-height: 230px;
+    padding: 1.27rem;
+    margin-bottom: 2rem;
+    .boxImg {
+      height: 155px;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3),
+        0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &:hover {
+      .boxText {
+        h3 {
+          padding-bottom: 0.5rem;
+        }
+      }
+      .playIcon {
+        @include playIcon();
+        position: absolute;
+        top: 220px;
+        right: 15px;
+        &:hover {
+          @extend .playIcon;
+          width: 41px;
+          height: 41px;
+          top: 220px;
+          right: 14.5px;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .boxText {
+    padding-bottom: 0.4rem;
+    padding-top: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    .boxComment {
+      font-size: 0.7rem;
+      color: $navColor;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 650;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+.main {
+  .mainBody {
+    width: 100%;
+    .boxes {
+      padding: 1.2rem 2rem;
+    }
+    .focusH1 {
+      padding-bottom: 0rem;
+    }
+    .focusText {
+      padding: 0.4rem 0rem 1rem;
+      color: $navColor;
+      font-size: 0.95rem;
+    }
+    h1 {
+      font-weight: 750;
+      font-size: 1.35rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+}
+
+.playpage {
+  .innerPage {
+    background-color: $boxdark;
+    width: 100%;
+    .playIcon {
+      @include playIcon();
+      @extend .playIcon;
+      margin-left: 2.1rem;
+      position: relative;
+      height: 56px;
+      width: 57px;
+      svg {
+        height: 28px;
+        width: 28px;
+      }
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      margin-right: 1.5rem;
+      &:hover {
+        @extend .playIcon;
+        width: 59px;
+        height: 59px;
+        transition: all 0.3s ease-in-out;
+        margin-right: 1.35rem;
+      }
+    }
+    .playlistSongs {
+      .playlistIcons {
+        display: flex;
+        align-items: center;
+        .OtherIcons {
+          .heartIcon {
+            fill: $navColor;
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+      .Songs {
+        li {
+          list-style-type: none;
+          width: 100%;
+          padding: 0.5rem;
+          &:hover {
+            background: red;
+          }
+        }
+      }
+    }
+    .playlistinfo {
+      display: flex;
+      text-align: left;
+      padding: 1.5rem;
+      margin: 0;
+      .playlistinfoIMG {
+        padding-left: 0.65rem;
+        img {
+          width: 234px;
+          height: 234px;
+          -webkit-box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+          margin: 0;
+        }
+      }
+      .pageContent {
+        padding-top: 4.5rem;
+        padding-left: 20px;
+        margin: 0;
+        .spotifyLikes {
+          display: flex;
+          align-items: center;
+          font-size: 0.85rem;
+          .caption {
+            font-weight: 700;
+            padding-right: 0.2rem;
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+          .dot {
+            height: 3px;
+            width: 3px;
+            background-color: $navColor;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.2rem;
+            font-weight: 400;
+          }
+          .dotLikes {
+            padding-right: 0.2rem;
+            color: $navColor;
+            font-weight: 400;
+          }
+          .time {
+            color: $navColor;
+            font-weight: 400;
+          }
+        }
+
+        h2 {
+          font-weight: 700;
+          font-size: 12px;
+          margin-top: 4px;
+          padding-bottom: 1rem;
+        }
+        h1 {
+          font-weight: 900;
+          padding: 0.08em 35px 1.2rem;
+          font-size: 59px;
+          transform: scale(1.1, 1.1);
+          line-height: 48px;
+          letter-spacing: -0.04em;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+          padding: 1rem 0rem 0.5rem;
+          font-size: 0.9rem;
+          color: $navColor;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .musicInfo {
+    .regPreview {
+      font-size: 14px;
+      font-weight: 500;
+      bottom: 2.5rem;
+    }
+    .regDescription {
+      display: none;
+    }
+  }
+}

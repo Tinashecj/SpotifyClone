@@ -1,0 +1,460 @@
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.App {
+  height: calc(100vh - 90px);
+  background: #131313;
+  display: flex;
+}
+
+.header {
+  width: 273px;
+  height: 100%;
+  background: #040404;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: 12px;
+  color: white;
+}
+
+.header > ul > a > li {
+  color: #b3b3b3;
+  text-decoration: none;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.97rem;
+  display: flex;
+  align-items: center;
+}
+
+.header > ul > a > li:hover {
+  color: white;
+}
+
+.header > ul > a > li.active {
+  background: #282828;
+  color: white;
+}
+
+.header > ul > a > li svg {
+  fill: currentColor;
+  margin-right: 13px;
+}
+
+.header > ul > a > li svg:hover {
+  fill: white;
+}
+
+.header > ul {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 4px;
+  padding-top: 0rem;
+  list-style-type: none;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.outerWrap {
+  height: 100vh;
+  min-height: 100%;
+  background: #282828;
+}
+
+.outerMusic {
+  height: 90px;
+  background: linear-gradient(120deg, #3e32a8, #e310c7);
+}
+
+.outerMusic .regPreview {
+  position: fixed;
+  left: 2.2rem;
+  bottom: 3.3rem;
+  font-size: 13.4px;
+  font-weight: 300;
+}
+
+.outerMusic .regDescription {
+  position: fixed;
+  left: 2.2rem;
+  bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.outerMusic .login a {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 1.7rem;
+  right: 3rem;
+}
+
+.outerMusic .login a:hover {
+  right: 2.5rem;
+}
+
+.logo {
+  color: white;
+  padding: 1.5rem 1.5rem;
+}
+
+.logo svg {
+  max-width: 130px;
+}
+
+.cookies {
+  font-size: 0.7rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #b3b3b3;
+  text-align: left;
+  margin-top: auto;
+  padding: 1.1rem 1.55rem;
+}
+
+.cookies span {
+  display: block;
+  padding-bottom: 0.4rem;
+}
+
+.topNavBar {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: rgba(9, 9, 9, 0.78);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.topNavBar *.MuiSvgIcon-root {
+  margin-right: 20px;
+  fill: #b3b3b3;
+}
+
+.topNavBar .login a {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0.7rem;
+  right: 3rem;
+}
+
+.topNavBar .login a:hover {
+  right: 2.8rem;
+}
+
+.body {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  padding-top: 3.8rem;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 32.0029%;
+  transform: translate(0px, 493.793px);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px #040404;
+  border-radius: 0px;
+  transition: background-color 0.2s;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+.playIcon, .boxes .box:hover .playIcon:hover, .playpage .innerPage .playIcon, .playpage .innerPage .playIcon:hover {
+  display: none;
+}
+
+.boxes {
+  padding-left: 0.45rem;
+}
+
+.boxes .otherBoxes {
+  display: flex;
+  justify-content: right;
+}
+
+.boxes .box {
+  margin-right: 15px;
+  position: relative;
+  background: #282828;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 150px;
+  max-width: 150px;
+  height: 230px;
+  max-height: 230px;
+  padding: 1.27rem;
+  margin-bottom: 2rem;
+}
+
+.boxes .box .boxImg {
+  height: 155px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.boxes .box .boxImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boxes .box:hover .boxText h3 {
+  padding-bottom: 0.5rem;
+}
+
+.boxes .box:hover .playIcon, .boxes .box:hover .playIcon:hover {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1db954;
+  display: flex;
+  overflow: hidden;
+  margin-left: auto;
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
+  position: absolute;
+  top: 220px;
+  right: 15px;
+}
+
+.boxes .box:hover .playIcon svg, .boxes .box:hover .playIcon:hover svg {
+  margin: auto;
+}
+
+.boxes .box:hover .playIcon:hover {
+  width: 41px;
+  height: 41px;
+  top: 220px;
+  right: 14.5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.boxes .boxText {
+  padding-bottom: 0.4rem;
+  padding-top: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.boxes .boxText .boxComment {
+  font-size: 0.7rem;
+  color: #b3b3b3;
+}
+
+.boxes .boxText h3 {
+  font-size: 16px;
+  font-weight: 650;
+  padding-bottom: 0.5rem;
+}
+
+.main .mainBody {
+  width: 100%;
+}
+
+.main .mainBody .boxes {
+  padding: 1.2rem 2rem;
+}
+
+.main .mainBody .focusH1 {
+  padding-bottom: 0rem;
+}
+
+.main .mainBody .focusText {
+  padding: 0.4rem 0rem 1rem;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+}
+
+.main .mainBody h1 {
+  font-weight: 750;
+  font-size: 1.35rem;
+  padding-bottom: 1.5rem;
+}
+
+.playpage .innerPage {
+  background-color: #282828;
+  width: 100%;
+}
+
+.playpage .innerPage .boxes .box:hover .playIcon:hover, .boxes .box:hover .playpage .innerPage .playIcon:hover, .playpage .innerPage .playIcon, .playpage .innerPage .playIcon:hover {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1db954;
+  display: flex;
+  overflow: hidden;
+  margin-left: auto;
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
+  margin-left: 2.1rem;
+  position: relative;
+  height: 56px;
+  width: 57px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1.5rem;
+}
+
+.playpage .innerPage .boxes .box:hover .playIcon:hover svg, .boxes .box:hover .playpage .innerPage .playIcon:hover svg, .playpage .innerPage .playIcon svg, .playpage .innerPage .playIcon:hover svg {
+  margin: auto;
+}
+
+.playpage .innerPage .boxes .box:hover .playIcon:hover svg, .boxes .box:hover .playpage .innerPage .playIcon:hover svg, .playpage .innerPage .playIcon svg, .playpage .innerPage .playIcon:hover svg {
+  height: 28px;
+  width: 28px;
+}
+
+.playpage .innerPage .boxes .box:hover .playIcon:hover, .boxes .box:hover .playpage .innerPage .playIcon:hover, .playpage .innerPage .playIcon:hover {
+  width: 59px;
+  height: 59px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 1.35rem;
+}
+
+.playpage .innerPage .playlistSongs .playlistIcons {
+  display: flex;
+  align-items: center;
+}
+
+.playpage .innerPage .playlistSongs .playlistIcons .OtherIcons .heartIcon {
+  fill: #b3b3b3;
+  width: 28px;
+  height: 28px;
+}
+
+.playpage .innerPage .playlistSongs .Songs li {
+  list-style-type: none;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.playpage .innerPage .playlistSongs .Songs li:hover {
+  background: red;
+}
+
+.playpage .innerPage .playlistinfo {
+  display: flex;
+  text-align: left;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.playpage .innerPage .playlistinfo .playlistinfoIMG {
+  padding-left: 0.65rem;
+}
+
+.playpage .innerPage .playlistinfo .playlistinfoIMG img {
+  width: 234px;
+  height: 234px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.playpage .innerPage .playlistinfo .pageContent {
+  padding-top: 4.5rem;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.playpage .innerPage .playlistinfo .pageContent .spotifyLikes {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.playpage .innerPage .playlistinfo .pageContent .spotifyLikes .caption {
+  font-weight: 700;
+  padding-right: 0.2rem;
+}
+
+.playpage .innerPage .playlistinfo .pageContent .spotifyLikes .caption:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.playpage .innerPage .playlistinfo .pageContent .spotifyLikes .dot {
+  height: 3px;
+  width: 3px;
+  background-color: #b3b3b3;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.2rem;
+  font-weight: 400;
+}
+
+.playpage .innerPage .playlistinfo .pageContent .spotifyLikes .dotLikes {
+  padding-right: 0.2rem;
+  color: #b3b3b3;
+  font-weight: 400;
+}
+
+.playpage .innerPage .playlistinfo .pageContent .spotifyLikes .time {
+  color: #b3b3b3;
+  font-weight: 400;
+}
+
+.playpage .innerPage .playlistinfo .pageContent h2 {
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 4px;
+  padding-bottom: 1rem;
+}
+
+.playpage .innerPage .playlistinfo .pageContent h1 {
+  font-weight: 900;
+  padding: 0.08em 35px 1.2rem;
+  font-size: 59px;
+  transform: scale(1.1, 1.1);
+  line-height: 48px;
+  letter-spacing: -0.04em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.playpage .innerPage .playlistinfo .pageContent p {
+  padding: 1rem 0rem 0.5rem;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+@media only screen and (max-width: 940px) {
+  .musicInfo .regPreview {
+    font-size: 14px;
+    font-weight: 500;
+    bottom: 2.5rem;
+  }
+  .musicInfo .regDescription {
+    display: none;
+  }
+}
